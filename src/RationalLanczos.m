@@ -1,4 +1,4 @@
-function [V,W,T,S,Stil,Ttil] = RatLan_paper(A,v,w,n,B,L,Lambda,Beta)
+function [V,W,T,S,Stil,Ttil] = RationalLanczos(A,v,w,n,B,L,Lambda,Beta)
 % RATLAN computes the biorthogonal bases of rational Krylov subspaces with 
 %  given poles and the oblique projections on these subspaces as a pencil.
 %
@@ -104,7 +104,7 @@ for i = 2:n
         what = -tempw2*A'*wbar+tempw1*wbar-wtilde;
         
         
-        [alpha,u] = NormalizeIter(vhat,what);
+        [alpha,u] = NormalizeIteration(vhat,what);
         V = [V,u*vhat];
         W = [W,alpha*what];
         d_i = u*tempv1;
