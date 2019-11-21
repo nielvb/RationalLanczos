@@ -39,7 +39,9 @@ temp2 = dot(v,wbar_1)/dot(A*v,wbar_1);
 vhat_2 = -temp1*A*vbar_1 + vbar_1;
 what_2 = -temp2*A'*wbar_1 + wbar_1;
 
-[sigma,gamma_1,r,d_1] = normalize_init(vhat_2,what_2)
+
+
+[sigma,gamma_1,r,d_1] = NormalizeInit(vhat_2,what_2)
 
 l_2 = L(1)/r;
 b_2 = B(1)/r
@@ -102,7 +104,7 @@ for i = 2:n
         what = -tempw2*A'*wbar+tempw1*wbar-wtilde;
         
         
-        [alpha,u] = normalize_iter(vhat,what);
+        [alpha,u] = NormalizeIter(vhat,what);
         V = [V,u*vhat];
         W = [W,alpha*what];
         d_i = u*tempv1;
