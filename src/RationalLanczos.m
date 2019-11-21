@@ -72,10 +72,10 @@ Ttil(2,1) = beta_2;
 for i = 2:n
     if(i==2)
         betarand = randn(1); % some random value for beta
-        lambdarand = Lambda(n);%randn(1); % some random value for lambda
+        lambdarand = randn(1); % some random value for lambda
         vtilde = 1/betarand' * ((L(i)*A-B(i)*I)\((betarand'*A-lambdarand*I)*V(:,i-1)));
         lrand = randn(1);
-        brand = B(n);%randn(1);
+        brand = randn(1);
         wtilde = 1/lrand' * ((Beta(i)*A'-Lambda(i)*I)\((lrand'*A'-brand*I)*W(:,i-1)));
     else
         if(Beta(i-2)==0)

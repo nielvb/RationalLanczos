@@ -1,8 +1,0 @@
-function [alpha,u] = NormalizeIteration(vhat,what)
-%NormalizeIteration computes normalization constants
-%   Normalization constants alpha, u are computed such that dot(wha)
-dotp = dot(what,vhat);
-u = sqrt(1/dotp);
-alpha = sqrt(1/dotp)';
-
-end
